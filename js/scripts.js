@@ -25,5 +25,12 @@ var mlToOz = function(ml) {
 
 
 $(function() {
-  
+  $("form#gallonToLiter").submit(function(event){
+    event.preventDefault();
+
+    var gallon = parseInt($("input#gallon").val());
+
+    result = gallonToLiter(gallon);
+    $(".output").text(gallon + " gallon(s) is/are " + result + " liters.")
+  });
 });
